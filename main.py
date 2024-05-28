@@ -32,7 +32,7 @@ mythical = 0
 
 poketwo_id = '716390085896962058'
 bot = discum.Client(
-    token='MTIzNzIyOTM3NTU0ODgyMTUzOA.GLbTnX.J-GRu4z7uhDnL3LDkTsidf8aLF_h3E2Glurliw', log=False)
+    token='', log=False)
 keep_alive.keep_alive()
 
 
@@ -150,65 +150,70 @@ def on_message(resp):
                             print(f'Total Pokémon Caught: {num_pokemon}')
 
                     elif 'human' in content:
+                        bot.sendMessage('1237231239849840691', message=f'<@1005663711123493025> please solve the captcha')
                         stop(spam_process)
                         log('Captcha Detected; Autocatcher Paused. Press enter to restart.')
                         input()
-                        bot.sendMessage('1237231239849840691', message=f'<@1005663711123493025> please solve the captcha')
+                       
 
 
 @bot.gateway.command
 def on_message(resp):
     if resp.event.message:
         m = resp.parsed.auto()
-        if m['channel_id'] == '1237258917076013082':
-            if m['author']['id'] == '1005663711123493025':
+        if m['channel_id'] == '1243902555809906720':
+            if m['author']['id'] == '1243897906344497284':
              content = m['content']
              if '$bal' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> bal')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> bal')
              elif '$quest' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> q')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> q')
              elif '$profile' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> profile')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> profile')
              elif '$pokemon' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> p')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> p')
              elif '$sh' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> p --sh')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> p --sh')
              elif '$myth' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> p --my')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> p --my')
              elif '$leg' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> p --leg')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> p --leg')
              elif '$spd' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> p --spdiv 31')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> p --spdiv 31')
              elif '$trade' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> t <@1005663711123493025>')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> t <@1005663711123493025>')
              elif '$tc' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> t c')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> t c')
              elif '$taa' in content:
-               bot.sendMessage('1237258917076013082', message='<@716390085896962058> t --aa')
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> t aa --3000')
+             elif '$help' in content:
+               bot.sendMessage('1243902555809906720', message='```HELP MENU:\n__$bal__ : displays poketwo balance\n__$quest__ : displays poketwo quests\n__$profile__ : displays p2 profile\n__$pokemon__ : shows all the pokemons\n__$sh__ : displays shinies caught\n__$leg__ : shows legendary mons caught\n__$myth__ : shows mythical mons caught\n__$spd__ : displayed speed 31 mons\n__$trade__ : sends trade prompt\n__$tc__ : confirms trade')
+             elif '$pika' in content:
+               bot.sendMessage('1243902555809906720', message='<@716390085896962058> p --n pikachu --n pichu --n raichu')
              elif '$pc' in content:
                split = content.split(' ')
                pc = split[1]
-               bot.sendMessage('1237258917076013082', message=f'<@716390085896962058> t a pc {pc}')
+               bot.sendMessage('1243902555809906720', message=f'<@716390085896962058> t a pc {pc}')
              elif '$mb' in content:
                split = content.split(' ')
                mb = split[1]
-               bot.sendMessage('1237258917076013082', message=f'<@716390085896962058> m b {mb}')
+               bot.sendMessage('1243902555809906720', message=f'<@716390085896962058> m b {mb}')
              elif '$pk' in content:
                split = content.split(' ')
                pK = split[1]
-               bot.sendMessage('1237258917076013082', message=f'<@716390085896962058> t a {pK}')
+               bot.sendMessage('1243902555809906720', message=f'<@716390085896962058> t a {pK}')
              elif '$go' in content:
                split = content.split(' ')
                g0 = split[1]
-               bot.sendMessage('1237258917076013082', message=f'<@716390085896962058> go {g0}')
+               bot.sendMessage('1243902555809906720', message=f'<@716390085896962058> go {g0}')
              elif '$info' in content:
                split = content.split(' ')
                info = split[1]
-               bot.sendMessage('1237258917076013082', message=f'<@716390085896962058> i {info}')
+               bot.sendMessage('1243902555809906720', message=f'<@716390085896962058> i {info}')
              elif '$select' in content:
                split = content.split(' ')
                slc = split[1]
-               bot.sendMessage('1237258917076013082', message=f'<@716390085896962058> s {slc}')
+               bot.sendMessage('1243902555809906720', message=f'<@716390085896962058> s {slc}')
             else:
                   log('lmso gay')
 @bot.gateway.command
@@ -220,6 +225,27 @@ def buttonclicker(resp):
                     if len(m["components"]) > 0:
                         content = m['content']
                         if 'Are you sure you want to buy this' in content:
+                                buts = Buttoner(m['components'])
+                         
+                                bot.click(
+                                      m["author"]["id"],
+                                      channelID=m["channel_id"],
+                                      guildID=m.get('guild_id'),
+                                      messageID=m["id"],
+                                      messageFlags=m["flags"],
+                                      data=buts.getButton(row=0, column=0)
+                                  )
+            except:
+                pass 
+@bot.gateway.command
+def buttonclicker(resp):
+        if resp.event.message or resp.event.message_updated:
+            m = resp.parsed.auto()
+            try:
+                if m['author']['id'] == '716390085896962058':
+                    if len(m["components"]) > 0:
+                        content = m['content']
+                        if 'Are you sure you want to trade' in content:
                                 buts = Buttoner(m['components'])
                          
                                 bot.click(
