@@ -14,8 +14,8 @@ from discum.utils.button import Buttoner
 version = '0.0'
 
 owner_id = 1005663711123493025
-channel_id = 1237231239849840691
-catch_id = 1237231239849840691
+channel_id = 1243902449794814062
+catch_id = 1243902449794814062
 with open('pokemon.txt', 'r', encoding='utf8') as file:
     pokemon_list = file.read()
 with open('legendary.txt', 'r') as file:
@@ -52,7 +52,7 @@ def solve(message):
 def spam():
     while True:
         contenttt = random.getrandbits(128)
-        bot.sendMessage('1237231260485550101', contenttt)
+        bot.sendMessage('1243902505352429579', contenttt)
         intervals = [3.0, 3.0, 3.0, 3.0] #best interval for spawns in poketwo bot
         time.sleep(random.choice(intervals))
 
@@ -84,14 +84,14 @@ def on_message(resp):
     global spam_process
     if resp.event.message:
         m = resp.parsed.auto()
-        if m['channel_id'] == '1237231239849840691':
+        if m['channel_id'] == '1243902449794814062':
             if m['author']['id'] == '716390085896962058':
                 if m['embeds']:
                     embed_title = m['embeds'][0]['title']
                     if 'wild pokémon has appeared!' in embed_title:
                         stop(spam_process)
                         time.sleep(1)
-                        bot.sendMessage('1237231239849840691', message='<@716390085896962058> h')
+                        bot.sendMessage('1243902449794814062', message='<@716390085896962058> h')
                     elif "Congratulations" in embed_title:
                         embed_content = m['embeds'][0]['description']
                         if 'now level' in embed_content:
@@ -119,7 +119,7 @@ def on_message(resp):
                                 stop(spam_process)
                                 time.sleep(1)
                                 bot.sendMessage(
-                                    '1237231239849840691', message=f'<@716390085896962058> c {i}')
+                                    '1243902449794814062', message=f'<@716390085896962058> c {i}')
                         time.sleep(1)
                         spam_process = start_spam()
 
@@ -150,7 +150,7 @@ def on_message(resp):
                             print(f'Total Pokémon Caught: {num_pokemon}')
 
                     elif 'human' in content:
-                        bot.sendMessage('1237231239849840691', message=f'<@1005663711123493025> please solve the captcha')
+                        bot.sendMessage('1243902449794814062', message=f'<@1005663711123493025> please solve the captcha')
                         stop(spam_process)
                         log('Captcha Detected; Autocatcher Paused. Press enter to restart.')
                         input()
